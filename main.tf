@@ -33,17 +33,10 @@ resource "azurerm_key_vault" "bootstrap" {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = data.azurerm_client_config.current.object_id
 
-    key_permissions = [
-      "Get",
-    ]
-
     secret_permissions = [
-      "Get", "Set", "Delete", "Purge"
+      "Get", "List", "Set", "Delete", "Recover", "Backup", "Restore", "Purge"
     ]
 
-    storage_permissions = [
-      "Get",
-    ]
   }
 }
 
