@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "bootstrap" {
-  name     = "${var.resource_group}-resource_group"
+  name     = "${var.resource_group}-rg"
   location = var.location
 }
 
 resource "azurerm_storage_account" "bootstrap" {
-  name                     = "${var.resource_group}-storage"
+  name                     = "${var.resource_group}strg"
   resource_group_name      = azurerm_resource_group.bootstrap.name
   location                 = azurerm_resource_group.bootstrap.location
   account_tier             = "Standard"
@@ -18,7 +18,7 @@ resource "azurerm_storage_container" "bootstrap" {
 }
 
 resource "azurerm_key_vault" "bootstrap" {
-  name                = "${var.resource_group}-key_vault"
+  name                = "${var.resource_group}-kv"
   location            = azurerm_resource_group.bootstrap.location
   resource_group_name = azurerm_resource_group.bootstrap.name
 
