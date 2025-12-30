@@ -42,12 +42,12 @@ resource "azurerm_key_vault" "bootstrap" {
 
 resource "azurerm_key_vault_secret" "username" {
   name         = "user-name"
-  value        = "admin"
+  value        = "adminuser"
   key_vault_id = azurerm_key_vault.bootstrap.id
 }
 
 resource "azurerm_key_vault_secret" "password" {
   name         = "user-password"
-  value        = "admin@123"
+  value        = "0Navomvj1!@#$"
   key_vault_id = azurerm_key_vault.bootstrap.id
 }
