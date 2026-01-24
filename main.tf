@@ -36,7 +36,6 @@ resource "azurerm_key_vault" "bootstrap" {
     secret_permissions = [
       "Get", "List", "Set", "Delete", "Recover", "Backup", "Restore", "Purge"
     ]
-
   }
 }
 
